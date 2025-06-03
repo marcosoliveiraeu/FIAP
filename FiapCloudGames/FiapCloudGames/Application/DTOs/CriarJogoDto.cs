@@ -20,7 +20,7 @@ namespace FiapCloudGames.Application.DTOs
         [Required(ErrorMessage = "A data de lançamento é obrigatória.")]
         public DateTime DataLancamento { get; set; }
 
-        public bool EnviarNotificacao { get; set; } = true; 
+        public bool EnviarNotificacao { get; set; } = false; 
     }
 
 }

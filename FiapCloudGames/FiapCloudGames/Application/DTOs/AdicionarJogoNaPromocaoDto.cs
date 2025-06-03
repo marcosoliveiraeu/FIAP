@@ -10,6 +10,6 @@ namespace FiapCloudGames.Application.DTOs
         [Required(ErrorMessage = "O Id do jogo é obrigatório.")]
         public Guid JogoId { get; set; }
 
-        public bool EnviarNotificacao { get; set; } = true; 
+        public bool EnviarNotificacao { get; set; } = false; 
     }
 }
