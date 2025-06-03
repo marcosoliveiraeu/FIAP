@@ -2,6 +2,7 @@
 using FiapCloudGames.Application.Services;
 using FiapCloudGames.Application.Services.Interfaces;
 using FiapCloudGames.Domain.Entities;
+using FiapCloudGames.Domain.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -38,8 +39,16 @@ namespace FiapCloudGames.Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            await _usuarioService.CadastrarUsuarioAsync(usuario.Nome, usuario.Email, usuario.Senha);
-            return Ok(new { message = "Usuário cadastrado com sucesso!" });
+            try
+            {
+                await _usuarioService.CadastrarUsuarioAsync(usuario.Nome, usuario.Email, usuario.Senha);
+                return Ok(new { message = "Usuário cadastrado com sucesso!" });
+            }
+            catch (BusinessException ex)
+            {
+                // Retorna uma mensagem amigável para o usuário
+                return BadRequest(new { mensagem = ex.Message });
+            }
 
         }
 
@@ -47,6 +56,7 @@ namespace FiapCloudGames.Api.Controllers
         /// Listar todos os usuários
         /// </summary>
         [HttpGet("BuscarTodos")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         public async Task<ActionResult<IEnumerable<Usuario>>> ObterTodos()
         {
             var usuarios = await _usuarioService.ObterTodosAsync();

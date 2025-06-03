@@ -14,7 +14,7 @@ namespace FiapCloudGames.Application.DTOs
         public string Descricao { get; set; }
 
         [Required(ErrorMessage = "O status é obrigatório.")]
-        public StatusPromocao Status { get; set; }
+        public StatusPromocao Status { get; set; } 
 
         [Required(ErrorMessage = "O percentual de desconto é obrigatório.")]
         [Range(0.01, 100, ErrorMessage = "O percentual deve ser entre 0,01 e 100.")]

@@ -1006,30 +1006,29 @@
       },
       "CategoriaJogo": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20
+          "Acao",
+          "Aventura",
+          "RPG",
+          "Estrategia",
+          "Esportes",
+          "Corrida",
+          "Simulacao",
+          "Puzzle",
+          "Terror",
+          "Plataforma",
+          "MundoAberto",
+          "MultiplayerOnline",
+          "Tiro",
+          "Luta",
+          "Casual",
+          "MusicaRitmo",
+          "Educacional",
+          "Indie",
+          "VR",
+          "SciFi",
+          "Fantasia"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "CriarJogoDto": {
         "required": [
@@ -1270,11 +1269,10 @@
       },
       "Perfil": {
         "enum": [
-          0,
-          1
+          "USUARIO",
+          "ADMINISTRADOR"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "Promocao": {
         "required": [
@@ -1409,11 +1407,10 @@
       },
       "StatusPromocao": {
         "enum": [
-          0,
-          1
+          "ATIVA",
+          "INATIVA"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "Usuario": {
         "required": [
@@ -1461,7 +1458,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "http",
-        "description": "Digite 'Bearer' + espaço + seu token JWT",
+        "description": "Digite seu token JWT",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }

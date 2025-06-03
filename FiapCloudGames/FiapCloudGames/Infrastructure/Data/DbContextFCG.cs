@@ -11,9 +11,7 @@
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Jogo> Jogos { get; set; }
         public DbSet<JogosUsuario> JogosUsuarios { get; set; }
-
         public DbSet<Promocao> Promocoes { get; set; }
-
         public DbSet<PromocaoJogo> PromocaoJogos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
