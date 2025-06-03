@@ -1,0 +1,54 @@
+@FiapCloudGames_HostAddress = http://localhost:7131
+
+GET {{FiapCloudGames_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### Login perfil ADMINISTRADOR
+POST https://localhost:7131/api/Login/login
+Content-Type: application/json
+
+{
+  "email": "mickey@gmail.com",
+  "senha": "Fiap@123"
+}
+
+
+###
+
+### Login perfil USUARIO
+POST https://localhost:7131/api/Login/login
+Content-Type: application/json
+
+{
+  "email": "peter@fiap.com",
+  "senha": "Fiap@123"
+}
+
+###
+
+### Endpoint público (acesso livre)
+GET https://localhost:7131/api/Login/publico
+Accept: application/json
+
+###
+
+### Endpoint autenticado (qualquer usuário autenticado)
+GET https://localhost:7131/api/Login/autenticado
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtaWNrZXlAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQURPUiIsImp0aSI6IjY5ZTA1MjI2LWIzNGEtNGI3ZC05YmJkLTJiMDhlMDcyYzM5MiIsImV4cCI6MTc0ODgzNjkwMywiaXNzIjoiU3VhQXBwRmlhcCIsImF1ZCI6IkZpYXBDbG91ZEdhbWVzQVBJIn0.a-ij7NEa0C67RR-hgX-7f5W8qxUrJdY5OoKWZbdWe6g
+Accept: application/json
+
+###
+
+### Endpoint restrito ao perfil USUARIO
+GET https://localhost:7131/api/Login/usuario
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtaWNrZXlAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQURPUiIsImp0aSI6ImYzNTVhNGVhLWJjMzctNDY0ZC1iNTExLTFlMjMzYWRlMDk1ZSIsImV4cCI6MTc0ODgzNjQ0OCwiaXNzIjoiU3VhQXBwRmlhcCIsImF1ZCI6IkZpYXBDbG91ZEdhbWVzQVBJIn0.HE6eHYLZXfTbJBRTgTQ3hN7E46lzcsqaIEFIsvM_1Y8
+Accept: application/json
+
+###
+
+### Endpoint restrito ao perfil ADMINISTRADOR
+GET https://localhost:7131/api/Login/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtaWNrZXlAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQURPUiIsImp0aSI6ImYzNTVhNGVhLWJjMzctNDY0ZC1iNTExLTFlMjMzYWRlMDk1ZSIsImV4cCI6MTc0ODgzNjQ0OCwiaXNzIjoiU3VhQXBwRmlhcCIsImF1ZCI6IkZpYXBDbG91ZEdhbWVzQVBJIn0.HE6eHYLZXfTbJBRTgTQ3hN7E46lzcsqaIEFIsvM_1Y8
+Accept: application/json
