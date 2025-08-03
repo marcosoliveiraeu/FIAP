@@ -132,12 +132,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-
-builder.Services.AddApplicationInsightsTelemetry(options =>
-{
-    options.ConnectionString = builder.Configuration["ApplicationInsights:ConnectionString"];
-});
-
 var app = builder.Build();
 
 //if (app.Environment.IsDevelopment())
